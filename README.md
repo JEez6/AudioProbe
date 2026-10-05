@@ -1,6 +1,6 @@
 # AudioProbe
 
-[DolbyRouter](../DolbyRouter) 的配套**测试探针**。用来验证「音频走哪条输出轨、挂不挂杜比」，
+[DolbyRouter](https://github.com/JEez6/DolbyRouter) 的配套**测试探针**。用来验证「音频走哪条输出轨、挂不挂杜比」，
 本身是用于测试的播放器，是一个可复现的音频路由实验台。 测试音频直接内置在安装包，是 XXXTentacion的Moonlight
 因为电脑上刚好有本地音频拿来用了。
 
@@ -24,12 +24,12 @@
 | 7 | OpenSL ES（8192 大缓冲） | OpenSL | 普通轨 → ✅ 杜比 |
 | 8 | OpenSL ES（`LATENCY_EFFECTS`，游戏常用） | OpenSL | FAST 轨 → ❌ |
 
-装上 [DolbyRouter](../DolbyRouter) 并把本应用加入名单后，上表**所有**后端都应回落到普通轨（`AudioOut_15`，
+装上 [DolbyRouter]((https://github.com/JEez6/DolbyRouter)) 并把本应用加入名单后，上表**所有**后端都应回落到普通轨（`AudioOut_15`，
 effect chain 里能看到 `DAP_offload`），声音带上杜比。
 
 ## 2. 怎么用
 
-1. 安装 [DolbyRouter](../DolbyRouter)：刷入 Zygisk 模块并重启，再用配置 APK 勾选 **AudioProbe**。
+1. 安装 [DolbyRouter](https://github.com/JEez6/DolbyRouter)：刷入 Zygisk 模块并重启，再用配置 APK 勾选 **AudioProbe**。
 2. 杀掉 AudioProbe 重开（让模块在进程启动时注入）。
 3. 选一个后端，点「开始播放」。
 4. 切到桌面执行抓取命令对照：
