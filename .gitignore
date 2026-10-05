@@ -1,0 +1,13 @@
+# Gradle / build
+.gradle/
+build/
+app/build/
+app/.cxx/
+
+# Android SDK path + IDE
+local.properties
+.idea/
+*.iml
+
+# Audio assets are user-supplied and may be copyrighted — never commit
+app/src/main/assets/*.pcm

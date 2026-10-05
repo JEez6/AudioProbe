@@ -1,0 +1,4 @@
+// Top-level build file for AudioProbe
+plugins {
+    id 'com.android.application' version '9.3.0' apply false
+}

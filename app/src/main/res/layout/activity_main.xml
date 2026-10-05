@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AudioProbe — 音频接口路由比对"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:paddingBottom="12dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="选择一种音频接口，点开始播放。播放时切到桌面，执行抓取命令对比输出线程/效果链。"
+        android:textSize="13sp"
+        android:paddingBottom="16dp" />
+
+    <RadioGroup
+        android:id="@+id/backendGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/rbAtNormal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Java AudioTrack Builder(普通)  [推荐先测]" />
+
+        <RadioButton
+            android:id="@+id/rbAtLowlat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Java AudioTrack Builder(低延迟)" />
+
+        <RadioButton
+            android:id="@+id/rbAtLegacy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Java AudioTrack 旧构造(STREAM_MUSIC)" />
+
+        <RadioButton
+            android:id="@+id/rbAaudioLowlat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="AAudio 低延迟 (native)" />
+
+        <RadioButton
+            android:id="@+id/rbAaudioNormal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="AAudio 普通 (native)" />
+
+        <RadioButton
+            android:id="@+id/rbOpensl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="OpenSL ES (native, 1024)" />
+
+        <RadioButton
+            android:id="@+id/rbOpenslLarge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="OpenSL ES (native, 8192 大缓冲)" />
+
+        <RadioButton
+            android:id="@+id/rbOpenslLe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="OpenSL ES (LATENCY_EFFECTS, 游戏常用)" />
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="16dp">
+
+        <Button
+            android:id="@+id/toggleBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="开始播放" />
+
+        <Button
+            android:id="@+id/copyBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="复制状态" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingTop="12dp">
+
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textIsSelectable="true"
+            android:text="未播放。"
+            android:textSize="13sp"
+            android:typeface="monospace" />
+    </ScrollView>
+
+</LinearLayout>
